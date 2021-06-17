@@ -2,13 +2,18 @@ import Taro from '@tarojs/taro'
 import {View, Form, Input, Textarea, Button, Text} from '@tarojs/components'
 import './index.scss'
 
-import {AtButton } from 'taro-ui'
+import { AtButton } from 'taro-ui'
 
 export default function postForm(props) {
+
+  // let AA = ()=>{
+  //   this.onSubmit()
+  // }
+
   return (
     <View>
       <View>添加新的帖子</View>
-      <Form onSubmit={props.handleSubmit}>
+      <Form>
 
         <View className="from-main">
           <View className="form-hint">标题</View>
@@ -27,9 +32,10 @@ export default function postForm(props) {
           value={props.formContent}
           onInput={props.handleContentInput}
           />
-          <AtButton  className="form-button" formType="submit" type="primary">
+          <Button  formType="submit"  type={"primary"}
+                   onClick={props.handleSubmit} >
             提交
-          </AtButton >
+          </Button>
         </View>
 
       </Form>

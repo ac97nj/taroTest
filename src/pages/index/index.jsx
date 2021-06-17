@@ -1,3 +1,4 @@
+import Taro from '@tarojs/taro'
 import {useState} from 'react'
 import {Text, View} from '@tarojs/components'
 import {PostCard, PostForm} from '../../components'
@@ -18,6 +19,7 @@ export default function Index() {
   // handleSubmit={e => this.handleSubmit(e)}
 
   function handleSubmit(e) {
+    console.log(e)
     e.preventDefault()
     // posts 是一个数组,所以要用concat来连接
     const newPosts = posts.concat({title: formTitle, content: formContent})
@@ -30,10 +32,13 @@ export default function Index() {
       type: 'success'
     })
 
+    setIsOpened(false)
+
   }
 
   return (
     <View className="index">
+      <AtMessage />
       {posts.map((item, index) => (
         <PostCard
           key={index} title={item.title} content={item.content}
@@ -53,6 +58,7 @@ export default function Index() {
           handleContentInput={e => setFormContent(e.target.value)}
         />
       </AtFloatLayout>
+
       <View className="post-button">
         <AtFab onClick={ ()=>setIsOpened(true) }>
           <Text className="at-fab__icon at-icon at-icon-edit">
