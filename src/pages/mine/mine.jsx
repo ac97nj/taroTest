@@ -9,8 +9,8 @@ export default function Mine() {
     <View className="mine">
       <View>
         <Image src={avatar} className="mine-avatar" />
-        <View className="mine-nickName">图雀酱</View>
-        <View className="mine-username">tuture</View>
+        <View className="mine-nickName">辉辉</View>
+        <View className="mine-username">9999</View>
       </View>
       <View className="mine-footer">From 图雀社区 with Love ❤</View>
     </View>
