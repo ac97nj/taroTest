@@ -23,7 +23,6 @@ export default function postForm(props) {
             placeholder="点击输入标题"
             value={props.formTitle}
             onInput={props.handleTitleInput}
-
           />
           <View className="form-hint">正文</View>
           <Textarea
@@ -32,10 +31,10 @@ export default function postForm(props) {
           value={props.formContent}
           onInput={props.handleContentInput}
           />
-          <Button  formType="submit"  type={"primary"}
+          <AtButton   formType="submit"  type={"primary"}
                    onClick={props.handleSubmit} >
             提交
-          </Button>
+          </AtButton >
         </View>
 
       </Form>

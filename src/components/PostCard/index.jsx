@@ -9,12 +9,14 @@ export default function PostCard(props) {
       const {title, content} = props
       Taro.navigateTo({
         url:`/pages/post/post?title=${title}&content=${content}`
-      }).then()
+      }).then(
+
+      )
     }
   }
   // classNames('foo', { bar: true }); // => 'foo bar'
-  // classNames({ 'foo-bar': false }); // => ''
-  //  props.isList  为真时候 postcard__isList存在
+  // //classNames({ 'foo-bar': false }); // => ''
+  // props.isList  为真时候 postcard__isList存在
   return (
     <View className={classNames('postcard',{postcard__isList: props.isList}) }
 
